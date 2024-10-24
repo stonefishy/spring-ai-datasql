@@ -1,0 +1,22 @@
+There are 3 mysql tables schema product_sales, products, customers.
+CREATE TABLE product_sales (
+    sale_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    sale_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    price DECIMAL(10, 2) NOT NULL,
+    customer_id INT,
+    region VARCHAR(100),
+    FOREIGN KEY (product_id) REFERENCES products(product_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100),
+    product_category VARCHAR(100)
+);
+CREATE TABLE customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100)
+);
+I will ask you question, please base on table schema to generate the SQL text in single line, please note I only need full correct sql text, do not
+need other text or any other characters.
