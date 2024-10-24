@@ -1,6 +1,7 @@
 package spring.ai.datasql.service;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.nio.file.Paths;
 public class PromptService {
 
     @Value("classpath:prompts.txt")
-    private org.springframework.core.io.Resource resource;
+    private Resource resource;
 
     private String fileContent;
 
